@@ -49,8 +49,6 @@ nav li {
     font-size: 1.2em;
 }
 a:link {
-    text-decoration: none;
-    color: black;
 }
 a:visited {
     color: black;
