@@ -42,6 +42,9 @@ nav li {
     padding: 0.5em;
     font-size: 1.2em;
 }
+nav li:hover {
+    opacity: 50%;
+}
 a:link {
     text-decoration: none;
     color: black
@@ -93,6 +96,9 @@ footer {
     margin: 8px;
     font-family: Caveat;
     font-size: 1.3em;
+}
+.polaroid:hover {
+    transform: translate(2%, 2%);
 }
 .photo {
     width: 100%;
