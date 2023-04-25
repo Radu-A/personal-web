@@ -35,10 +35,11 @@ nav ul {
     padding: 0px;
     display: flex;
     justify-content: space-around;
+    list-style-type: none;
 }
 nav li {
     display: inline-block;
-    padding: 10px;
+    padding: 0.5em;
     font-size: 1.2em;
 }
 a:link {
@@ -53,6 +54,7 @@ footer {
     max-width: 900px;
     margin: 5em auto 0 auto;
 }
+/*---Solo el footer del índice tiene que ser desplazado hacia abajo*/
 #indexfooter {
     position: fixed;
     bottom: 0;
@@ -155,19 +157,18 @@ footer {
 .contact {
     width: 100%;
     max-width: 400px;
-    margin: 90px auto 0;/*--Para que las fotos no se desplacen a la derecha--*/
+    margin: 90px auto 0;
 }
 .contact div {
     margin: 10px auto;
     width: 100%;
-    display: flex;/*necesario para situar la foto en el centro*/
+    /*--Para dar uniformidad a los elementos--*/
+    display: flex;
     flex-direction: column;
 }
 .contact img {
-    margin: 0 auto;/*Junto con display flex arriba*/
     opacity: 80%;
     width: 100%;
-    padding: 0;
     border: 2px solid black;
     border-radius: 5px;
 }
@@ -211,14 +212,12 @@ input[type="submit"] {
     nav ul {
         list-style-type: none;
     }
-    
     nav li {
-        display: inline-block;
-        padding: 10px;
+        padding: 0.5em;
         font-size: 2em;
     }
     .index {
-        max-width: 1100px;
+        max-width: 1000px;
         margin: 90px auto;
     }
     /*--BIOGRAFÍA--*/
@@ -238,16 +237,10 @@ input[type="submit"] {
         margin-bottom: auto;
     }
     .column div {
-        width: inherit;
-        width: 100%;
         max-width: 600px;
         margin: 0 auto;
         padding: 2em;
-        box-sizing: border-box;/*--Para que las fotos no se desplacen a la derecha--*/
+        box-sizing: border-box;/*--Para que los media no desborden--*/
     }
-    .column video {
-        width: 100%;
-    }
-    /*--Contact--*/
 }
 
