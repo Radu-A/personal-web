@@ -20,53 +20,46 @@
         </nav>
     </header>
     <main>
-        <div class="banner cheat"></div>
         <!--Creo un div que contenga dos bloques, sin manipular main en CSS-->
         <div class="contact">
-            <div class="block left">
                 <div class="text">
-                    <h3>Dime que hacemos</h3>
+                    <h2>Dime que hacemos</h2>
                 </div>
                 <div>
                     <img src="/assets/img/Contacto/DSC_0350.jpg" alt="">
                 </div>
                 
-                
-            </div>
-            <div class="block right">
                 <form action="">
                     <div>
-                        <input type="text" name="nombre" placeholder="Nombre completo">
+                        <input type="text" name="nombre" placeholder="Nombre completo" required>
                     </div>
-
                     <div>
-                        <input type="email" name="email" placeholder="Email">
+                        <input type="tel" name="tlf" placeholder="Número de teléfono" required>
                     </div>
-                        
                     <div>
-                        <select name="" id="">
-                            <option value="" placeholder="Seleccione evento">Selecciona un evento</option>
-                            <option value="">Fiesta</option>
-                            <option value="">Video</option>
-                            <option value="">Foto</option>
+                        <input type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                    </div>
+                    <div>
+                        <select name="" id="" required>
+                            <option value="">Tipo de proyecto</option>
+                            <option value="musica">Sesión de música</option>
+                            <option value="audiovisual">Contenido audiovisual</option>
+                            <option value="foto">Sesión de fotos</option>
                         </select>
                     </div>
                     <div>
-                        <input type="date">
-                    </div>
-                    <div>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <!--Aplico id para mayor especificidad-->
+                        <textarea id="textarea" name="" id="" cols="30" rows="10" placeholder="Describe tu idea"></textarea>
                     </div>
                     <div>
                         <input type="submit">
                     </div>
                 </form>
-            </div>
         </div>
     </main>
 
     <footer>
-        <div><h3>Búscame en las redes</h3></div>
+        <div><h2>Búscame en las redes</h2></div>
         <div class="footer">
             <div class="icon"><a href="https://www.facebook.com/apomorfo" target="_blank"><img src="/assets/img/Footer/mini_facebook_bn.png" alt=""></a></div>
             <div class="icon"><a href="https://www.instagram.com/" target="_blank"><img src="/assets/img/Footer/mini_insta_bn.png" alt=""></a></div>

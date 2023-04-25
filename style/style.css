@@ -6,30 +6,24 @@ body {
     font-family: 'Cabin Sketch';
     margin: 0px;
     padding: 0px;
+    /*--Los elementos se disponen igual pero navbar no se despega del techo--*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 header {
-    height: 45px;
     width: 100%;
     background-color: white;
     opacity: 95%;
+    /*Para fijar la barra arriba*/
     position: fixed;
     z-index: 10;
-    padding: 0;
-}
-#banner {
-    color: white;
 }
 h1 {
     text-align: center;
     font-size: 2.7em;
 }
-h2 {
-    padding: 0px 1.5em;
-}
-h3 {
+h2, h3 {
     text-align: center;
 }
 p {
@@ -38,7 +32,6 @@ p {
 }
 nav ul {
     margin: auto;
-    list-style-type: none;
     padding: 0px;
     display: flex;
     justify-content: space-around;
@@ -57,7 +50,8 @@ a:visited {
 }
 footer {
     width: 100%;
-    margin-top: 5em;
+    max-width: 900px;
+    margin: 5em auto 0 auto;
 }
 #indexfooter {
     position: fixed;
@@ -74,9 +68,6 @@ footer {
 /*---INICIO---*/
 .index {
     margin-top: 90px;
-}
-.cheat {
-    height: 20px;/*---height: 10px;Chapuza---*/
 }
 .img {
     display: flex;
@@ -133,18 +124,18 @@ footer {
     background-image: url("../assets/img/Biografía/07_TRABAJO.jpg");
 }
 #img8 {
-    background-image: url("../assets/img/Biografía/08_FOTO.jpg");
-}
-#img8 p {
+    background-image: url("../assets/img/Biografía/09_DJ.jpg");
     opacity: 80%;
 }
 /*---PORTFOLIO---*/
 .portfolio {
     margin-top: 90px;
 }
+.portfolio h2 {
+    padding: 0px 1.5em;
+}
 .media {
     width: 100%;
-    box-sizing: border-box;/*--Para que no quede desplazado a la derecha--*/
 }
 .column video {
     width: inherit;
@@ -160,46 +151,41 @@ footer {
     padding: 0.5em 0;
 }
 /*---CONTACTO---*/
+
 .contact {
-    max-width: 900px;
-    margin: 50px auto;
-}
-.block {
     width: 100%;
     max-width: 400px;
-    margin: 0 auto;/*--Para que las fotos no se desplacen a la derecha--*/
+    margin: 90px auto 0;/*--Para que las fotos no se desplacen a la derecha--*/
 }
-.block div {
+.contact div {
     margin: 10px auto;
-    width: 80%;
+    width: 100%;
     display: flex;/*necesario para situar la foto en el centro*/
     flex-direction: column;
 }
-.left img {
+.contact img {
     margin: 0 auto;/*Junto con display flex arriba*/
     opacity: 80%;
     width: 100%;
     padding: 0;
     border: 2px solid black;
-    border-radius: 3px;
-}
-.right {
-    margin: 1em auto;
-    opacity: 75%;
-}
-input {
-    width: 100%;
-    padding: 0;
-    margin: 0;
     border-radius: 5px;
 }
-select, textarea {
-    width: 100%!important;
-    padding: 0;
+input, select, textarea {
+    height: 2em;
+    padding: 0.1em 0.8em;
+    margin: 0;
+    font-family: 'Cabin Sketch';
+    border-radius: 5px;
+    border: 2px solid black;
+}
+#textarea {
+    height: 7em;
 }
 input[type="submit"] {
-    width: 50%;
-    align-self: center;
+    font-family: 'Cabin Sketch';
+    font-size: 1.3em;
+    background-color: rgb(255, 255, 255);
 }
 
 /*----------RESPONSIVE FOOTER-------*/
