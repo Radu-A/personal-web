@@ -18,13 +18,17 @@ function showAlert(id, myclass, message) {
     document.querySelector(`${id} :nth-child(1)`).classList.add(`switch_${myclass}`);
 }
 
+let redElements = document.getElementsByClassName("red");
+let redInputs = document.getElementsByClassName("switch_red");
+//creo todo lo que sucede al hacer click en el botón
 document.querySelector("#myform").addEventListener("submit", function(event) {
     event.preventDefault();
     const vnombre = event.target.nombre.value;
     const vtlf = event.target.tlf.value;
     const vemail = event.target.email.value;
     const vselect = event.target.select.value;
-    //si el valor del input está vacio y su div padre no tiene un segundo hijo, que sería la alerta que vamos a crear
+    //pregunto: el valor del input está vacio? && su div padre no tiene un segundo hijo?
+    //el segundo hijo es el que se crea si se cumple la condición
     if (vnombre === '' && !document.querySelector("#dnombre :nth-child(2)")) {
         showAlert("#dnombre", "red", "El campo nombre es obligatorio");
     }
@@ -36,13 +40,11 @@ document.querySelector("#myform").addEventListener("submit", function(event) {
     if (!re.exec(vemail) && !document.querySelector("#demail :nth-child(2)")) {
         showAlert("#demail", "red", "El campo email es obligatorio");
     }
-    if (vselect === '' && !document.querySelector("#dselect :nth-child(4)")) {
+    if (vselect === '' && document.querySelector("select").className !== "switch_red") {
         showAlert("#dselect", "red", "El tipo de proyecto es obligatorio");
     }
     //si todos los campo están cubiertos
     if (vnombre !== '' && vtlf !== '' && re.exec(vemail) && vselect !== '') {
-        let redElements = document.getElementsByClassName("red");
-        let redInputs = document.getElementsByClassName("switch_red");
         //bucle para eliminar los párrafos alerta creados
         for (let i = redElements.length - 1; i >= 0; i--) {
             redElements[i].remove();
@@ -59,5 +61,12 @@ document.querySelector("#myform").addEventListener("submit", function(event) {
         document.querySelector("#myform").remove();
         showAlert(".contact", "green", 'Hablamos pronto');
     }
-    console.log()
 });
+const inputs = document.querySelectorAll("#myform div");
+
+//añadir evento de cambio a todos los inputs medianto for
+// for (let i = 0; i < inputs.length - 1; i ++) {
+//     inputs[i].addEventListener("change", function() {
+//         console.log(this.secondChild);
+//     })
+// }
