@@ -29,18 +29,18 @@
                     <img src="/assets/img/Contacto/DSC_0350.jpg" alt="">
                 </div>
                 
-                <form action="">
-                    <div>
-                        <input type="text" name="nombre" placeholder="Nombre completo" required>
+                <form action="" id="myform">
+                    <div id="dnombre">
+                        <input type="text" name="nombre" placeholder="Nombre completo">
                     </div>
-                    <div>
-                        <input type="tel" name="tlf" placeholder="Número de teléfono" required>
+                    <div id="dtlf">
+                        <input type="tel" name="tlf" placeholder="Número de teléfono">
                     </div>
-                    <div>
-                        <input type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                    <div id="demail">
+                        <input type="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                     </div>
-                    <div>
-                        <select name="" id="" required>
+                    <div id="dselect">
+                        <select name="select" id="select">
                             <option value="">Tipo de proyecto</option>
                             <option value="musica">Sesión de música</option>
                             <option value="audiovisual">Contenido audiovisual</option>
@@ -51,7 +51,7 @@
                         <!--Aplico id para mayor especificidad-->
                         <textarea id="textarea" name="" id="" cols="30" rows="10" placeholder="Describe tu idea"></textarea>
                     </div>
-                    <div>
+                    <div id="dsubmit">
                         <input type="submit">
                     </div>
                 </form>
@@ -78,6 +78,6 @@
             </div>
         </div>
     </footer>
-    <script src="script/script.js"></script>
+    <script src="../script/script.js"></script>
 </body>
 </html>
