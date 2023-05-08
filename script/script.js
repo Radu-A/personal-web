@@ -32,19 +32,21 @@ document.querySelector("#myform").addEventListener("submit", function(event) {
     if (vnombre === '' && !document.querySelector("#dnombre :nth-child(2)")) {
         showAlert("#dnombre", "red", "El campo nombre es obligatorio");
     }
-    if (vtlf === '' && !document.querySelector("#dtlf :nth-child(2)")) {
-        showAlert("#dtlf", "red", "El campo teléfono es obligatorio");
+    //declaro una expresion regular para validar el teléfono
+    const reTlf = /[0-9]{9}/;
+    if (!reTlf.exec(vtlf) && !document.querySelector("#dtlf :nth-child(2)")) {
+        showAlert("#dtlf", "red", "El campo teléfono es obligatorio y debe tener nueve números");
     }
-    const re= /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
-    //
-    if (!re.exec(vemail) && !document.querySelector("#demail :nth-child(2)")) {
-        showAlert("#demail", "red", "El campo email es obligatorio");
+    //declaro una expresion regular para validar el email
+    const reEmail= /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+    if (!reEmail.exec(vemail) && !document.querySelector("#demail :nth-child(2)")) {
+        showAlert("#demail", "red", "El campo email es obligatorio y debe tener el formato adecuado");
     }
     if (vselect === '' && document.querySelector("select").className !== "switch_red") {
         showAlert("#dselect", "red", "El tipo de proyecto es obligatorio");
     }
     //si todos los campo están cubiertos
-    if (vnombre !== '' && vtlf !== '' && re.exec(vemail) && vselect !== '') {
+    if (vnombre !== '' && reTlf.exec(vtlf) && reEmail.exec(vemail) && vselect !== '') {
         //estas variables funcionan tanto en local como en global
         //las declaro aquí para mayor claridad de código
         let redElements = document.getElementsByClassName("red");
@@ -68,10 +70,14 @@ document.querySelector("#myform").addEventListener("submit", function(event) {
 });
 
 //añadir evento de cambio a todos los inputs mediante bucle
-const inputs = document.querySelectorAll(".dinput input");
-for (let i = 0; i < inputs.length; i ++) {
-    inputs[i].addEventListener("change", function() {
-        //consigo eliminar la clase del input pero no el párrafo
-        this.removeAttribute("class");
+const dinputs = document.querySelectorAll(".dinput");
+for (let i = 0; i < dinputs.length; i ++) {
+    dinputs[i].addEventListener("change", function() {
+        //necesito saber el ID para manipular diferentes elementos del div
+        let divId = this.id;
+        //elimino la clase
+        document.querySelector(`#${divId} input, #${divId} select`).removeAttribute("class");
+        //elimino el párrafo
+        document.querySelector(`#${divId} p`).remove();
     })
 }
