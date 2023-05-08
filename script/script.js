@@ -1,5 +1,5 @@
 //Puede hacerse modifivando visibility en un div oculto,
-//pero así practico diferentes métodos del DOM
+//pero así practico diferentes métodos y propiedades del DOM
 
 //para no repetir código creo una función que según los parámetros
 //modificará un elemento diferente con una clase diferente y 
@@ -18,11 +18,11 @@ function showAlert(id, myclass, message) {
     document.querySelector(`${id} :nth-child(1)`).classList.add(`switch_${myclass}`);
 }
 
-let redElements = document.getElementsByClassName("red");
-let redInputs = document.getElementsByClassName("switch_red");
+("switch_red");
 //creo todo lo que sucede al hacer click en el botón
 document.querySelector("#myform").addEventListener("submit", function(event) {
     event.preventDefault();
+    //creo variables para no repetir código en los condicionales
     const vnombre = event.target.nombre.value;
     const vtlf = event.target.tlf.value;
     const vemail = event.target.email.value;
@@ -45,6 +45,10 @@ document.querySelector("#myform").addEventListener("submit", function(event) {
     }
     //si todos los campo están cubiertos
     if (vnombre !== '' && vtlf !== '' && re.exec(vemail) && vselect !== '') {
+        //estas variables funcionan tanto en local como en global
+        //las declaro aquí para mayor claridad de código
+        let redElements = document.getElementsByClassName("red");
+        let redInputs = document.getElementsByClassName("switch_red")
         //bucle para eliminar los párrafos alerta creados
         for (let i = redElements.length - 1; i >= 0; i--) {
             redElements[i].remove();
@@ -62,11 +66,12 @@ document.querySelector("#myform").addEventListener("submit", function(event) {
         showAlert(".contact", "green", 'Hablamos pronto');
     }
 });
-const inputs = document.querySelectorAll("#myform div");
 
-//añadir evento de cambio a todos los inputs medianto for
-// for (let i = 0; i < inputs.length - 1; i ++) {
-//     inputs[i].addEventListener("change", function() {
-//         console.log(this.secondChild);
-//     })
-// }
+//añadir evento de cambio a todos los inputs mediante bucle
+const inputs = document.querySelectorAll(".dinput input");
+for (let i = 0; i < inputs.length; i ++) {
+    inputs[i].addEventListener("change", function() {
+        //consigo eliminar la clase del input pero no el párrafo
+        this.removeAttribute("class");
+    })
+}
