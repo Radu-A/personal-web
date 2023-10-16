@@ -29,8 +29,8 @@ My first project at the Bootcamp course. A personal webpage buit only with HTML,
 
 ### Screenshot
 
-![](./assets/screenshots/smartphone.png)
-![](./assets/screenshots/biografia-big.jpg)
+![](./assets/screenshots/screenshot-mobile.png)
+![](./assets/screenshots/screenshot-desktop-biography.jpg)
 
 ### Links
 
